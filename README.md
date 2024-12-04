@@ -75,5 +75,5 @@
 
 ---
 
-## License
+<h2 href="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/LICENSE" target="_blank">License</h2>
 
