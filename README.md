@@ -1,7 +1,6 @@
 # Linefollower Robotics Project
 
-## Introduction  
-A concise overview of the project:  
+## Introduction 
 - **What it does:** A robot designed to follow a black line on a white background.  
 - **Purpose:** Inspired by my passion for cars, this project blends my interests in vehicles and robotics.
 - **Inspiration:** The concept draws from the functionality of RC cars. 
@@ -54,7 +53,6 @@ A concise overview of the project:
 ---
 
 ## Journal
-A timeline of the project’s progress:
 - **[Date]:**
 
 ---
