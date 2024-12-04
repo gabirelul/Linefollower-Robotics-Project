@@ -47,13 +47,12 @@
 - `src/` - Contains all source code
 - `hardware/` - Contains hardware schematics and diagrams
 - `images/` - Contains images of the project
-- 
 [![Demo Video]()]()
 
 ---
 
 ## Journal
-- **[Date]:**
+- **[03.12.2024]:** Started the documentation.
 
 ---
 
