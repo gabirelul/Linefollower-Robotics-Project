@@ -26,31 +26,38 @@
 </a>
 
 This block diagram illustrates the system architecture of the Linefollower
+# Line Follower Robot Project
 
-1. **QTR-8 Sensor Array**:  
-   - Connected to the **Analog pins A0-A5** for reading line data.
-   - The output of the IR sensors provides high/low values depending on the reflectivity of the surface.  
+## Components and Connections
 
-2. **DC Motors**:  
-   - Controlled via the **Motor Shield**.  
-   - Motor Shield pins connect to **digital PWM pins** for speed and direction control.  
-   - **Power**: Motors powered through the **Motor Shield's external 9V input**.
+### 1. QTR-8 Sensor Array
+- **Connection**: Connected to analog pins 6-11 for line detection.  
+- **Function**: The infrared sensors provide HIGH/LOW outputs depending on the surface reflectivity (black or white).  
 
-3. **LCD 16x2 Display**:  
-   - Connected through an **I2C module** to reduce pin usage.  
-   - Displays sensor values and data.
+---
 
-4. **Potentiometer**:  
-   - Connected to adjust the contrast of the **LCD display**.  
-   - Connected to **5V, GND**, and an **analog input pin** for value adjustments.
+### 2. DC Motors
+- **Control**: Managed via the Motor Shield.  
+- **Pins**: The Motor Shield uses digital pins to control motor speed and direction.  
+- **Power**: Motors are powered through the Motor Shield’s external 9V input.  
 
-5. **RGB LED**:  
-   - Red and Green connects to separate **PWM pins** for controlling brightness and color mixing.  
-   - A 220Ω resistor is added in series with each pin to limit current.
+### 3. LCD 16x2 Display
+- **Connection**: Connected through an I2C module.  
+- **Function**: Displays sensor readings and system data.  
 
-6. **Battery**:  
-   - The entire system is powered via a **9V battery**, connected to the Arduino’s barrel jack input.  
-   - The **Motor Shield** draws power directly from the 9V battery to drive the motors.  
+### 4. Potentiometer
+- **Connection**: Adjusts the LCD display contrast.  
+- **Wiring**: Connected to 5V, GND, and an analog input pin.  
+
+
+### 5. RGB LED
+- **Control**: Red and Green pins are connected to separate digital pins for controlling brightness and color mixing.  
+- **Resistors**: 220Ω resistors are added in series with each LED pin to limit current.  
+
+
+### 6. Power Supply
+- **Battery**: The system is powered via a 9V battery connected to the Arduino’s barrel jack input.  
+- **Motor Power**: The Motor Shield draws power directly from the 9V battery to drive the motors.  
 
 ---
 
