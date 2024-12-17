@@ -31,8 +31,6 @@ This block diagram illustrates the system architecture of the Linefollower
 - **Connection**: Connected to analog pins 6-11 for line detection.  
 - **Function**: The infrared sensors provide HIGH/LOW outputs depending on the surface reflectivity (black or white).  
 
----
-
 ### 2. DC Motors
 - **Control**: Managed via the Motor Shield.  
 - **Pins**: The Motor Shield uses digital pins to control motor speed and direction.  
