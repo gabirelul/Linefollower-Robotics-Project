@@ -26,9 +26,6 @@
 </a>
 
 This block diagram illustrates the system architecture of the Linefollower
-# Line Follower Robot Project
-
-## Components and Connections
 
 ### 1. QTR-8 Sensor Array
 - **Connection**: Connected to analog pins 6-11 for line detection.  
