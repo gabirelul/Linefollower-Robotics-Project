@@ -1,5 +1,18 @@
 # Linefollower Robotics Project
 
+# Table of Contents
+1. [Introduction](#introduction)  
+2. [General Description](#general-description)  
+3. [Hardware Design](#hardware-design)  
+4. [Software Design](#software-design)  
+5. [Results](#results)  
+6. [Conclusions](#conclusions)  
+7. [GitHub Repository Structure](#github-repository-structure)  
+8. [Journal](#journal)  
+9. [Bibliography](#bibliography)
+10. [License](#license)
+
+
 ## Introduction 
 - **What it does:** A robot designed to follow a black line on a white background.  
 - **Purpose:** Inspired by my passion for cars, this project blends my interests in vehicles and robotics.
@@ -56,8 +69,11 @@
 
 ---
 
-## Bibliography / Resources
+## Bibliography
 ### Software Resources
 ### Hardware Resources
 
 ---
+
+<h2 href="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/LICENSE" target="_blank">License</h2>
+
