@@ -75,6 +75,11 @@ This block diagram illustrates the system architecture of the Linefollower
 | Resistors                 | Assorted | [Datasheet](https://components101.com/resistors/resistor-datasheet)          |
 | DC Motor Shield Module    | 1        | [Datasheet](https://www.arduino.cc/en/Main/ArduinoMotorShieldR3)             |
 
+<a>
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/1.JPEG" width = "500px"></img>
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/2.JPEG" width = "500px"></img>
+</a>
+
 ---
 
 ## Software Design
