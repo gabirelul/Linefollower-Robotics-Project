@@ -60,20 +60,20 @@ This block diagram illustrates the system architecture of the Linefollower
 </a>
 
 ### Parts List
-| Component                 | Quantity | Datasheet Link                                                                 |
+| Component                 | Quantity | Datasheet Link|
 |---------------------------|----------|-------------------------------------------------------------------------------|
-| LCD 16x2                  | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/16x2%20LCD%20Datasheet.pdf)             |
-| Breadboard                | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/Breadboard%20Datasheet.pdf)                  |
-| DC Motors                 | 2        | [Datasheet](https://www.pololu.com/file/download/motor-datasheet.pdf)        |
-| Wheels                    | 2        | N/A                    |
-| Jumper Cables             | 20+      | [Reference](https://components101.com/wires/jumper-wire)                     |
-| 9V Battery                | 1        | N/A      |
-| Battery Connector for 9V  | 1        | [Reference](https://www.sparkfun.com/products/67)                            |
-| Potentiometer             | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/potentiometer%20datasheet.pdf)               |
-| QTR-8 Sensor Array        | 1        | [Datasheet](https://www.pololu.com/file/download/qtr-8a-datasheet.pdf)       |
-| RGB LED                   | 1        | [Datasheet](https://components101.com/leds/rgb-led-pinout-datasheet)         |
-| Resistors                 | Assorted | [Datasheet](https://components101.com/resistors/resistor-datasheet)          |
-| DC Motor Shield Module    | 1        | [Datasheet](https://www.arduino.cc/en/Main/ArduinoMotorShieldR3)             |
+| LCD 16x2                  | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/16x2%20LCD%20Datasheet.pdf) |
+| Breadboard                | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/Breadboard%20Datasheet.pdf) |
+| DC Motors                 | 2        | [Datasheet](https://www.pololu.com/file/download/motor-datasheet.pdf) |
+| Wheels                    | 2        | N/A |
+| Jumper Cables             | 20+      | [Datasheet](https://www.cedist.com/sites/default/files/associated_files/s-w604_spec.pdf)|
+| 9V Battery                | 1        | N/A |
+| Battery Connector for 9V  | 1        | N/A |
+| Potentiometer             | 1        | [Datasheet](https://components101.com/sites/default/files/component_datasheet/potentiometer%20datasheet.pdf)|
+| QTR-8 Sensor              | 1        | [Datasheet](https://www.pololu.com/docs/pdf/0j12/qtr-8x.pdf) |
+| RGB LED                   | 1        | [Datasheet](https://www.farnell.com/datasheets/3497864.pdf) |
+| Resistors                 | 220Ω | [Datasheet](https://assets.rs-online.com/v1699613067/Datasheets/7ec977c91977fd4e95a020bd86d6d6c5.pdf) |
+| DC Motor Shield Module    | 1        | [Datasheet](https://www.arduino.cc/en/Main/ArduinoMotorShieldR3) |
 
 <a>
 <img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/1.JPEG" width = "500px"></img>
