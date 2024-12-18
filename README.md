@@ -58,7 +58,7 @@ This block diagram illustrates the system architecture of the Linefollower
 
 ## Hardware Design
 <a>
-<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/thinker.jpg" width = "500px"></img>
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/thinker.png" width = "500px"></img>
 </a>
 
 ### Parts List
@@ -79,7 +79,6 @@ This block diagram illustrates the system architecture of the Linefollower
 
 <a>
 <img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/1.JPEG" width = "500px"></img>
-<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/2.JPEG" width = "500px"></img>
 </a>
 
 ---
