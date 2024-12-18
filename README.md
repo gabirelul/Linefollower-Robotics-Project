@@ -107,13 +107,12 @@ This block diagram illustrates the system architecture of the Linefollower
 - src/ - Contains all source code
 - hardware/ - Contains hardware schematics and diagrams
 - images/ - Contains images of the project
-[![Demo Video]()]()
 
 ---
 
 ## Journal
 - **[03.12.2024]:** Started the documentation.
-
+- **[17.12.2024]:** Hardware section update.
 ---
 
 ## Bibliography
