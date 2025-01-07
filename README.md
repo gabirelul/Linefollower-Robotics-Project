@@ -136,10 +136,11 @@ A PID controller adjusts motor speeds based on sensor input, improving line-foll
 
 ---
 
-## GitHub Repository Structure  
-- `src/` - Contains all source code  
-- `hardware/` - Contains hardware schematics and diagrams  
-- `images/` - Contains images of the project  
+## GitHub Repository Structure
+- src/ - Contains all source code
+- hardware/ - Contains hardware schematics and diagrams
+- images/ - Contains images of the project
+[![Demo Video]()]()
 
 ---
 
