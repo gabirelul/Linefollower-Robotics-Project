@@ -136,11 +136,10 @@ A PID controller adjusts motor speeds based on sensor input, improving line-foll
 
 ---
 
-## GitHub Repository Structure
-- src/ - Contains all source code
-- hardware/ - Contains hardware schematics and diagrams
-- images/ - Contains images of the project
-[![Demo Video]()]()
+## GitHub Repository Structure  
+- src/ - Contains all source code  
+- hardware/ - Contains hardware schematics and diagrams  
+- images/ - Contains images of the project  
 
 ---
 
@@ -159,4 +158,3 @@ http://robotresearchlab.com/2019/03/18/how-to-hookup-and-program-a-qtr-8-sensor-
 
 ## License
 You can find the project license details in the [License file](https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/LICENSE).
-
