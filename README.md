@@ -152,6 +152,7 @@ A PID controller adjusts motor speeds based on sensor input, improving line-foll
 
 ## Bibliography  
 https://lastminuteengineers.com/l293d-dc-motor-arduino-tutorial/
+-
 http://robotresearchlab.com/2019/03/18/how-to-hookup-and-program-a-qtr-8-sensor-array/
 
 ---
