@@ -100,9 +100,9 @@ This block diagram illustrates the system architecture of the Linefollower
 ## Sensor Calibration
 To calibrate the sensors, the system reads the minimum and maximum ADC values for each sensor to adjust for variations in surface reflectivity.
 
-Initialization: Each sensor is initialized with max (1023) and min (0) values.
-Calibration: The system reads sensor values and updates the min/max for each sensor based on detected surface (black or white).
-Final Calibration: Once complete, the sensor’s calibration values are stored for use during line-following, ensuring accurate detection.
+- Initialization: Each sensor is initialized with max (1023) and min (0) values.
+- Calibration: The system reads sensor values and updates the min/max for each sensor based on detected surface (black or white).
+- Final Calibration: Once complete, the sensor’s calibration values are stored for use during line-following, ensuring accurate detection.
 
 ---
 
