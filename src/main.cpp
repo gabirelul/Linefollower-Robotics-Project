@@ -81,14 +81,6 @@ void calibrateSensors()
     int sensorValue = readADC(SENSOR_PINS[i] - A0);
     sensorCalibration[i][0] = min(sensorCalibration[i][0], sensorValue); // Min value
     sensorCalibration[i][1] = max(sensorCalibration[i][1], sensorValue); // Max value
-    Serial.print("Sensor ");
-    Serial.print(i);
-    Serial.print(": ");
-    Serial.print(sensorValue);
-    Serial.print(" - Min: ");
-    Serial.print(sensorCalibration[i][0]);
-    Serial.print(" - Max: ");
-    Serial.println(sensorCalibration[i][1]);
   }
 
   Serial.println("Calibration complete!");
