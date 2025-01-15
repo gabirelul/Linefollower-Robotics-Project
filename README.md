@@ -126,13 +126,14 @@ A PID controller adjusts motor speeds based on sensor input, improving line-foll
 --- 
 
 ## Results
-  - Successfully built a robot that follows a black line using the QTR-8 sensor array.  
-  - Implemented PID control to maintain smooth line following.  
+  - Built a robot that follows a black line using the QTR-8 sensor array.  
+  - Implemented PID control to maintain smooth line following.
   - Integrated LCD display to show sensor values and robot status.  
 
-## Video Demo
+## Video Demos
 
-[YouTube](https://youtube.com/shorts/jdu-fO7EqT0)
+[YouTube 1](https://youtube.com/shorts/jdu-fO7EqT0)
+[YouTube 2](https://youtube.com/shorts/QFYJvnpDAgg)
 
 ---
 
