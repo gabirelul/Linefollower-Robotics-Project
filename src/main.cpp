@@ -1,6 +1,8 @@
 #include <LiquidCrystal.h>
 #include <Arduino.h>
 
+void setMotorSpeed(int leftSpeed, int rightSpeed);
+
 // LCD Pins
 const int RS = 13, EN = 12, D4 = 11, D5 = 10, D6 = 9, D7 = 8;
 LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
@@ -24,7 +26,9 @@ const int MAX_SPEED = 255;
 const int BASE_SPEED = 200; // Adjusted for better control
 
 // PID constants
-float Kp = 40.0, Ki = 0.0, Kd = 20.0;
+float Kp = 50.0;
+float Ki = 0.01;
+float Kd = 30.0;
 float integral = 0, previousError = 0;
 
 // Sensor calibration values
@@ -66,7 +70,8 @@ int readADC(uint8_t channel)
 // Calibrate the sensors
 void calibrateSensors()
 {
-  Serial.println("Calibrating...");
+  lcd.setCursor(0, 0);
+  lcd.print("Calibrating...");
 
   // Initialize min and max values
   for (int i = 0; i < NR_SENSORS; i++)
@@ -83,13 +88,58 @@ void calibrateSensors()
     sensorCalibration[i][1] = max(sensorCalibration[i][1], sensorValue); // Max value
   }
 
-  Serial.println("Calibration complete!");
+  lcd.clear();
+  lcd.print("Calibration OK");
+  delay(500);
+  lcd.clear();
+}
+
+// Scan sensors by moving left and right
+void scanAndCalibrate()
+{
+  lcd.setCursor(0, 0);
+  lcd.print("Scanning...   ");
+
+  // Move motors to the left
+  setMotorSpeed(-150, 150);
+  delay(500);
+
+  // Calibrate while moving left
+  for (int i = 0; i < NR_SENSORS; i++)
+  {
+    int sensorValue = readADC(SENSOR_PINS[i] - A0);
+    sensorCalibration[i][0] = min(sensorCalibration[i][0], sensorValue);
+    sensorCalibration[i][1] = max(sensorCalibration[i][1], sensorValue);
+  }
+
+  // Move motors to the right
+  setMotorSpeed(150, -150);
+  delay(1000);
+
+  // Calibrate while moving right
+  for (int i = 0; i < NR_SENSORS; i++)
+  {
+    int sensorValue = readADC(SENSOR_PINS[i] - A0);
+    sensorCalibration[i][0] = min(sensorCalibration[i][0], sensorValue);
+    sensorCalibration[i][1] = max(sensorCalibration[i][1], sensorValue);
+  }
+
+  // Return to center
+  setMotorSpeed(-150, 150);
+  delay(500);
+
+  // Stop motors
+  setMotorSpeed(0, 0);
+
+  lcd.clear();
+  lcd.print("Scan Complete");
+  delay(500);
+  lcd.clear();
 }
 
 // Set motor speed
 void setMotorSpeed(int leftSpeed, int rightSpeed)
 {
-  // Left Motor
   if (leftSpeed > 0)
   {
     analogWrite(ENABLE_PIN1, leftSpeed);
@@ -98,12 +148,11 @@ void setMotorSpeed(int leftSpeed, int rightSpeed)
   }
   else
   {
-    analogWrite(ENABLE_PIN1, 0);
+    analogWrite(ENABLE_PIN1, -leftSpeed); // Inversăm polaritatea
     digitalWrite(MOTOR1_PIN1, LOW);
-    digitalWrite(MOTOR1_PIN2, LOW);
+    digitalWrite(MOTOR1_PIN2, HIGH);
   }
 
-  // Right Motor
   if (rightSpeed > 0)
   {
     analogWrite(ENABLE_PIN2, rightSpeed);
@@ -112,9 +161,9 @@ void setMotorSpeed(int leftSpeed, int rightSpeed)
   }
   else
   {
-    analogWrite(ENABLE_PIN2, 0);
+    analogWrite(ENABLE_PIN2, -rightSpeed);
     digitalWrite(MOTOR2_PIN1, LOW);
-    digitalWrite(MOTOR2_PIN2, LOW);
+    digitalWrite(MOTOR2_PIN2, HIGH);
   }
 }
 
@@ -128,14 +177,13 @@ int readSensors()
   {
     int sensorValue = readADC(SENSOR_PINS[i] - A0);
 
-    // Check if the sensor value is within calibrated range
     if (sensorValue < sensorCalibration[i][0] || sensorValue > sensorCalibration[i][1])
     {
-      sensorValues[i] = 0; // Line not detected
+      sensorValues[i] = 0;
     }
     else
     {
-      sensorValues[i] = sensorValue; // Line detected
+      sensorValues[i] = sensorValue;
     }
 
     totalValue += sensorValues[i];
@@ -194,6 +242,18 @@ void setup()
 
 void loop()
 {
+  static bool wasRunning = false;
+
+  if (isRunning && !wasRunning)
+  {
+    scanAndCalibrate();
+    wasRunning = true;
+  }
+  else if (!isRunning && wasRunning)
+  {
+    wasRunning = false;
+  }
+
   int linePosition = readSensors();
   int targetPosition = NR_SENSORS / 2; // Ideal position (center)
 
@@ -201,43 +261,26 @@ void loop()
   {
     if (linePosition == -1)
     {
-      // Line not detected
       lcd.setCursor(0, 0);
       lcd.print("Line: Not Found");
       setMotorSpeed(0, 0);
       return;
     }
 
-    // Calculate error
     float error = targetPosition - linePosition;
+    integral += error;
+    float derivative = error - previousError;
+    previousError = error;
 
-    // Calculate PID terms
-    integral += error;                        // Sum of errors
-    float derivative = error - previousError; // Rate of change of error
-    previousError = error;                    // Update for next iteration
-
-    // PID output
     float correction = Kp * error + Ki * integral + Kd * derivative;
 
-    // Adjust motor speeds based on correction
     int leftSpeed = BASE_SPEED + correction;
     int rightSpeed = BASE_SPEED - correction;
 
-    // Limit motor speeds to [0, MAX_SPEED]
     leftSpeed = constrain(leftSpeed, 0, MAX_SPEED);
     rightSpeed = constrain(rightSpeed, 0, MAX_SPEED);
 
     setMotorSpeed(leftSpeed, rightSpeed);
-
-    // Print PID values to Serial Monitor
-    Serial.print("Error: ");
-    Serial.print(error);
-    Serial.print(" | Integral: ");
-    Serial.print(integral);
-    Serial.print(" | Derivative: ");
-    Serial.print(derivative);
-    Serial.print(" | Correction: ");
-    Serial.println(correction);
 
     lcd.setCursor(0, 0);
     if (linePosition < targetPosition - 1)
