@@ -47,9 +47,8 @@ This block diagram illustrates the system architecture of the Linefollower
 - **Connection**: Adjusts the LCD display contrast.  
 - **Wiring**: Connected to 5V, GND, and an analog input pin to allow easy adjustments of the display contrast.
 
-### 5. RGB LED  
-- **Control**: The Red and Green pins are connected to separate digital pins for controlling brightness and color mixing.  
-- **Software Control**: The LED can be programmed to indicate different statuses, such as "Line Lost" or "Line Followed."
+### 5. BUTTON 
+- **Control**: This button starts or stops the game
 
 ### 6. Power Supply  
 - **Battery**: The system is powered via a 9V battery connected to the Arduino’s barrel jack input.  
