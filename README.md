@@ -78,9 +78,9 @@ This block diagram illustrates the system architecture of the Linefollower
 | DC Motor Shield Module    | 1        | [Datasheet](https://www.arduino.cc/en/Main/ArduinoMotorShieldR3) |
 
 <a>  
-<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/3.JPEG" width = "500px"></img>  
-<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/4.JPEG" width = "500px"></img>  
-<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/5.JPEG" width = "500px"></img>  
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/3.JPG" width = "500px"></img>  
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/4.JPG" width = "500px"></img>  
+<img src="https://github.com/gabirelul/Linefollower-Robotics-Project/blob/main/images/5.JPG" width = "500px"></img>  
 </a>
 
 ---
