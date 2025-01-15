@@ -97,6 +97,13 @@ This block diagram illustrates the system architecture of the Linefollower
 - **Serial Debugging:** Serial communication is used to output sensor readings, PID values, and motor adjustments to monitor the robot’s behavior in real time. This helps in troubleshooting and fine-tuning the robot’s performance.  
 - **Implemented Code:** The main loop reads sensor data, applies PID control, and adjusts the motor speeds accordingly.
 
+## Sensor Calibration
+To calibrate the sensors, the system reads the minimum and maximum ADC values for each sensor to adjust for variations in surface reflectivity.
+
+- Initialization: Each sensor is initialized with max (1023) and min (0) values.
+- Calibration: The system reads sensor values and updates the min/max for each sensor based on detected surface (black or white).
+- Final Calibration: Once complete, the sensor’s calibration values are stored for use during line-following, ensuring accurate detection.
+
 ---
 
 ## Lab Functionalities in the Project
@@ -119,13 +126,14 @@ A PID controller adjusts motor speeds based on sensor input, improving line-foll
 --- 
 
 ## Results
-  - Successfully built a robot that follows a black line using the QTR-8 sensor array.  
-  - Implemented PID control to maintain smooth line following.  
+  - Built a robot that follows a black line using the QTR-8 sensor array.  
+  - Implemented PID control to maintain smooth line following.
   - Integrated LCD display to show sensor values and robot status.  
 
-## Video Demo
+## Video Demos
 
-[YouTube](https://youtube.com/shorts/jdu-fO7EqT0)
+[YouTube 1](https://youtube.com/shorts/jdu-fO7EqT0)
+[YouTube 2](https://youtube.com/shorts/QFYJvnpDAgg)
 
 ---
 
